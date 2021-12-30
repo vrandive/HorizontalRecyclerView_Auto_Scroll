@@ -3,6 +3,8 @@ package com.example.horizontalrecyclerview
 import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.GridView
 import android.widget.Toast
@@ -27,4 +29,5 @@ class GridViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_grid_view)
         gridview.adapter= GridAdapter(list)
     }
+    
 }
