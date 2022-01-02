@@ -12,17 +12,6 @@ import android.widget.TextView
 import androidx.core.view.marginTop
 
 class GridAdapter(var context: Context, var arraylist: ArrayList<list_data>) : BaseAdapter() {
-    var list = intArrayOf(
-        R.drawable.d1,
-        R.drawable.d2,
-        R.drawable.d3,
-        R.drawable.d4,
-        R.drawable.d5,
-        R.drawable.d6,
-        R.drawable.d7,
-        R.drawable.d8,
-        R.drawable.d9
-    )
 
     @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
@@ -41,7 +30,7 @@ class GridAdapter(var context: Context, var arraylist: ArrayList<list_data>) : B
 
             img.setOnClickListener {
                 val intent = Intent(parent?.context, FullScreen::class.java)
-                intent.putExtra("imgID", list[position] )
+                intent.putExtra("imgID", listItem.image_data )
                 parent?.context?.startActivity(intent)
             }
 
