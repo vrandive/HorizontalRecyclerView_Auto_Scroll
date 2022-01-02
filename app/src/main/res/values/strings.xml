@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HorizontalRecyclerView</string>
+    <string name="app_name">Trial App</string>
     <string name="title_activity_all_images">All_images</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

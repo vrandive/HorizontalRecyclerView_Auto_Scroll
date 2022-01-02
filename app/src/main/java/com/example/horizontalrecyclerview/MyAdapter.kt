@@ -1,32 +1,62 @@
 package com.example.horizontalrecyclerview
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.view.LayoutInflater
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.view.marginTop
 
-class GridAdapter(private val list: List<Int>) : BaseAdapter() {
+class GridAdapter(var context: Context, var arraylist: ArrayList<list_data>) : BaseAdapter() {
+    var list = intArrayOf(
+        R.drawable.d1,
+        R.drawable.d2,
+        R.drawable.d3,
+        R.drawable.d4,
+        R.drawable.d5,
+        R.drawable.d6,
+        R.drawable.d7,
+        R.drawable.d8,
+        R.drawable.d9
+    )
+
+    @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
-        val img = ImageView(parent?.context)
-        img.setImageResource(getItem(position))
-        img.scaleType = ImageView.ScaleType.FIT_XY
-        img.layoutParams = ViewGroup.LayoutParams(500,400)
+            var view: View = View.inflate(context, R.layout.grid_data, null)
+            var listItem: list_data = arraylist.get(position)
 
-        img.setOnClickListener {
-            val intent = Intent(parent?.context, FullScreen::class.java)
-            intent.putExtra("imgID" , getItem(position))
-            parent?.context?.startActivity(intent)
-        }
+            val img: ImageView = view.findViewById(R.id.icon_image)
+            img.setImageResource(listItem.image_data!!)
+            img.scaleType = ImageView.ScaleType.FIT_XY
+            //img.layoutParams = ViewGroup.LayoutParams(500, 400)
 
-        return img
+            val txt: TextView= view.findViewById(R.id.icon_text)
+            txt.text = listItem.name
+            txt.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+
+            img.setOnClickListener {
+                val intent = Intent(parent?.context, FullScreen::class.java)
+                intent.putExtra("imgID", list[position] )
+                parent?.context?.startActivity(intent)
+            }
+
+        return view
     }
 
-    override fun getItem(position: Int): Int = list[position]
+    override fun getItem(position: Int): Any {
+        return arraylist.get(position)
+    }
 
-    override fun getItemId(position: Int): Long = 0
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
 
-    override fun getCount(): Int = list.size
+    override fun getCount(): Int {
+        return arraylist.size
+    }
 }

@@ -167,15 +167,6 @@ class MainActivity : AppCompatActivity() {
         handler.removeCallbacks(runnable)
     }
 
-    /*fun showMenu(view: View){
-        var popup = PopupMenu(this, view)
-        popup.menuInflater.inflate(R.menu.popup)
-        popup.setOnMenuItemClickListener(){
-
-        }
-        popup.inflate(R.menu.popup)
-        popup.show()
-    }*/
 }
 
 
