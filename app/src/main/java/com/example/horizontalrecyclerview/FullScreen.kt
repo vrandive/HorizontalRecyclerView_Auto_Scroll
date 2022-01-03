@@ -7,17 +7,6 @@ import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_full_screen.*
 
 class FullScreen : AppCompatActivity() {
-    var list = intArrayOf(
-        R.drawable.d1,
-        R.drawable.d2,
-        R.drawable.d3,
-        R.drawable.d4,
-        R.drawable.d5,
-        R.drawable.d6,
-        R.drawable.d7,
-        R.drawable.d8,
-        R.drawable.d9
-    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
