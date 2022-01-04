@@ -9,19 +9,21 @@ import android.widget.BaseAdapter
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.view.marginTop
+
 
 class GridAdapter(var context: Context, var arraylist: ArrayList<list_data>) : BaseAdapter() {
 
     @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
-            var view: View = View.inflate(context, R.layout.grid_data, null)
-            var listItem: list_data = arraylist.get(position)
+
+            val inflater = parent?.context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            val view: View = inflater.inflate(R.layout.grid_data, null)
+            val listItem: list_data = arraylist.get(position)
 
             val img: ImageView = view.findViewById(R.id.icon_image)
             img.setImageResource(listItem.image_data!!)
-            img.scaleType = ImageView.ScaleType.FIT_XY
+            //img.scaleType = ImageView.ScaleType.FIT_XY
             //img.layoutParams = ViewGroup.LayoutParams(500, 400)
 
             val txt: TextView= view.findViewById(R.id.icon_text)

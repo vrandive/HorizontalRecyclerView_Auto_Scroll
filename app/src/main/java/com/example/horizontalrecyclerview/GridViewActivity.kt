@@ -26,7 +26,7 @@ class GridViewActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
     }
 
     private fun setDataList(): ArrayList<list_data>{
-        var arrayList: ArrayList<list_data> = ArrayList()
+        val arrayList: ArrayList<list_data> = ArrayList()
         arrayList.add(list_data(R.drawable.d1,"Vidit Aatrey "))
         arrayList.add(list_data(R.drawable.d2,"Rajat Kumar Kedia"))
         arrayList.add(list_data(R.drawable.d3, "Rajesh Begur"))

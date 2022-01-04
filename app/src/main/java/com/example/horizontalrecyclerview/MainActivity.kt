@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.btn1)
         button.setOnClickListener{
-            val intent: Intent = Intent(this@MainActivity, GridViewActivity::class.java)
+            val intent: Intent = Intent(this, GridViewActivity::class.java)
             startActivity(intent)
         }
     }

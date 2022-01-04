@@ -1,36 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<com.google.android.material.card.MaterialCardView
+
     android:id="@+id/widget44"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_x="201px"
-    android:layout_y="165px"
     app:cardCornerRadius="8dp"
-    android:layout_marginBottom="20dp"
-    android:gravity="center_horizontal">
+
+    android:layout_marginBottom="20dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
     <ImageView
         android:id="@+id/icon_image"
         android:layout_width="wrap_content"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
+        android:scaleType="fitCenter"
         android:src="@drawable/d1">
     </ImageView>
-    <TextView
-        android:id="@+id/icon_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="8pt"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_below="@id/icon_image"
-        android:gravity="center_horizontal"
-        android:paddingBottom="10dp"
-        android:textAlignment="center"
-        android:textColorHighlight="#656565">
-    </TextView>
+
+        <TextView
+            android:id="@+id/icon_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/icon_image"
+            android:gravity="center_horizontal"
+            android:paddingBottom="10dp"
+            android:textAlignment="center"
+            android:textColorHighlight="#656565"
+            android:textSize="8pt"
+            android:textStyle="bold" />
     </RelativeLayout>
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
+</RelativeLayout>
