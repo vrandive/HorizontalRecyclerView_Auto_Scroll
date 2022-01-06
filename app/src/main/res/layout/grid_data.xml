@@ -1,40 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-<com.google.android.material.card.MaterialCardView
 
-    android:id="@+id/widget44"
+<RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:cardCornerRadius="8dp"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    android:layout_marginBottom="20dp">
+    <com.google.android.material.card.MaterialCardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/widget44"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:strokeColor="@color/cardview_shadow_start_color"
+        app:strokeWidth="1dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="true">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/icon_image"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/d1">
-    </ImageView>
+        <ImageView
+            android:id="@+id/icon_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="-28dp"
+            android:src="@drawable/d1" />
 
         <TextView
             android:id="@+id/icon_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/icon_image"
-            android:gravity="center_horizontal"
-            android:paddingBottom="10dp"
+            android:layout_marginTop="-25dp"
+            android:textColor="?android:textColorPrimary"
+            android:layout_marginBottom="5dp"
             android:textAlignment="center"
-            android:textColorHighlight="#656565"
             android:textSize="8pt"
             android:textStyle="bold" />
+
     </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>
 </RelativeLayout>
+
