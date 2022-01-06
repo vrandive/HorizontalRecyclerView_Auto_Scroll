@@ -19,28 +19,27 @@ class GridAdapter(var context: Context, var arraylist: ArrayList<list_data>) : B
 
             val inflater = parent?.context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             val view: View = inflater.inflate(R.layout.grid_data, null)
-            val listItem: list_data = arraylist.get(position)
+            val listItem: list_data = arraylist[position]
 
             val img: ImageView = view.findViewById(R.id.icon_image)
             img.setImageResource(listItem.image_data!!)
-            //img.scaleType = ImageView.ScaleType.FIT_XY
-            //img.layoutParams = ViewGroup.LayoutParams(500, 400)
+
 
             val txt: TextView= view.findViewById(R.id.icon_text)
             txt.text = listItem.name
             txt.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
 
             img.setOnClickListener {
-                val intent = Intent(parent?.context, FullScreen::class.java)
+                val intent = Intent(parent.context, FullScreen::class.java)
                 intent.putExtra("imgID", listItem.image_data )
-                parent?.context?.startActivity(intent)
+                parent.context?.startActivity(intent)
             }
 
         return view
     }
 
     override fun getItem(position: Int): Any {
-        return arraylist.get(position)
+        return arraylist[position]
     }
 
     override fun getItemId(position: Int): Long {
